@@ -5,15 +5,21 @@ class Contact:
         self.phone = phone
         self.email = email
 
+#
+# contact1=Contact("dilafruz","+998900461045","dilafruz@gmail.com")
+# baza=[contact1]
+# # print(baza)
 
-contact1=Contact("dilafruz","+998900461045","dilafruz@gmail.com")
-baza=[contact1]
-print(baza)
+class Sms:
+    def __init__(self, to_phone,text):
+        self.to_phone = to_phone
+        self.text = text
+
 
 
 def view_contact(s:list):
-    for item in s:
-        print(f"name:{item.name},phone:{item.phone},email:{item.email}")
+    for item,c in enumerate(s):
+        print(f"{item}. {c.name}, {c.phone}, {c.email}")
 
 
 def add_contact(s:list):
@@ -114,6 +120,98 @@ def contact_manager(s:list):
             delete_contact(s)
         else:
             break
-contact_manager(baza)
+# contact_manager(baza)
+
+'''sms manager'''
+
+def sms_view(smsl:list):
+    if not smsl:
+        print(" sms yoq")
+        return
+    for i, s in enumerate(smsl):
+        print(f"{i}. {s.to_phone}: {s.text}")
+
+def sms_send(s:list,smsl:list):
+    if not s:
+        print("contact yoq")
+        return
+
+    view_contact(s)
+    idx=input("qaysi contactga sms? (index): ")
+    if not idx.isdigit() or int(idx)>=len(s):
+        print("bunday indeks yoq")
+        return
+    idx=int(idx)
+    text=input("sms matni")
+
+
+    smsl.append(Sms(s[idx].phone,text))
+    print("yuborildi")
+
+def sms_delete(smsl:list):
+    sms_view(smsl)
+    idx=input("qaysi sms ochiriladi")
+    if not idx.isdigit() or int(idx)>=len(smsl):
+        print("bunday indeks yoq")
+        return
+    smsl.pop(int(idx))
+    print("sms ochdi")
+
+def sms_manager(s:list,smsl:list):
+    if not s:
+        print("contact yoq")
+        return
+    while True:
+        kod=input("1. view sms\n2. send sms\n3. delete sms\n4. exit")
+        if kod=="1":
+            sms_view(smsl)
+        elif kod=="2":
+            sms_send(s,smsl)
+        elif kod=="3":
+            sms_delete(smsl)
+        else:
+            break
+
+
+def manager_s_c():
+    s=[]
+    smsl=[]
+    while True:
+        kod=input("1.sms manager\n2.contact manager\n3. exit")
+        if kod=="1":
+            sms_manager(s,smsl)
+        elif kod=="2":
+            contact_manager(s)
+        else:
+            break
+
+
+manager_s_c()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
