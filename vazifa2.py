@@ -71,88 +71,87 @@
 #         else:
 #             break
 # shop_manager(shop1)
-
-
-'''uyga vazifa'''
-class Product():
-    def __init__(self,title,price,year):
-        self.title = title
-        self.price = price
-        self.year = year
-
-    def info(self):
-        print(f"title:{self.title},price:{self.price},year:{self.year}")
-
-class electronics(Product):
-    pass
-s1=Product('tv','100','2025')
-s1.info()
-
-class food(Product):
-    pass
-s2=Product('water','10','2025')
-s2.info()
-
-class book(Product):
-    pass
-s3=Product('book1','10','2025')
-s3.info()
-
-class elect(Product):
-    def __init__(self,title,price,year,size,cpu):
-        super().__init__(title,price,year)
-        self.size = size
-        self.cpu = cpu
-s1=elect('tv','100','2025','42','16')
-s1.info()
-
-class food1(Product):
-    def __init__(self,title,price,year,sizew,waterw)
-        super().__init__(title,price,year)
-        self.sizew = sizew
-        self.waterw = waterw
-s2=food1('water','10','2025','1','w')
-s2.info()
-
-class book2(Product):
-    def __init__(self,title,price,year,sizeb,colour):
-        super.__init__(title,price,year)
-        self.sizeb = sizeb
-        self.colour = colour
-s3=book2('book1','30','2025','2','green')
-s3.info()
-
-class Shop():
-    def __init__(self,name,baza):
-        self.name = name
-        self.baza = baza
-        self.electronics_products = []
-        self.food_products = []
-        self.book_products = []
-
-
-    def add_elect(self,product):
-        self.electronics_products.append(product)
-
-
-    def delete_elect(self,title):
-        for p in self.electronics_products:
-            if p.title == title:
-                self.electronics_products.remove(p)
-                print(f'{title} ochdi')
-        print("topilmadi")
-
-    def edit_elect(self,title,n_price=None,n_year=None):
-        for p in self.electronics_products:
-            if p.title == title:
-                if n_price:
-                    p.price = n_price
-                if n_year:
-                    p.year = n_year
-                    print(f'{title} yangilandi')
-                    return
-        print("topilmadi")
-
-    def show_elect(self,product):
-        for p in self.electronics_products:
-            p.info()
+#
+# '''uyga vazifa'''
+# class Product():
+#     def __init__(self,title,price,year):
+#         self.title = title
+#         self.price = price
+#         self.year = year
+#
+#     def info(self):
+#         print(f"title:{self.title},price:{self.price},year:{self.year}")
+#
+# class electronics(Product):
+#     pass
+# s1=Product('tv','100','2025')
+# s1.info()
+#
+# class food(Product):
+#     pass
+# s2=Product('water','10','2025')
+# s2.info()
+#
+# class book(Product):
+#     pass
+# s3=Product('book1','10','2025')
+# s3.info()
+#
+# class elect(Product):
+#     def __init__(self,title,price,year,size,cpu):
+#         super().__init__(title,price,year)
+#         self.size = size
+#         self.cpu = cpu
+# s1=elect('tv','100','2025','42','16')
+# s1.info()
+#
+# class food1(Product):
+#     def __init__(self,title,price,year,sizew,waterw)
+#         super().__init__(title,price,year)
+#         self.sizew = sizew
+#         self.waterw = waterw
+# s2=food1('water','10','2025','1','w')
+# s2.info()
+#
+# class book2(Product):
+#     def __init__(self,title,price,year,sizeb,colour):
+#         super.__init__(title,price,year)
+#         self.sizeb = sizeb
+#         self.colour = colour
+# s3=book2('book1','30','2025','2','green')
+# s3.info()
+#
+# class Shop():
+#     def __init__(self,name,baza):
+#         self.name = name
+#         self.baza = baza
+#         self.electronics_products = []
+#         self.food_products = []
+#         self.book_products = []
+#
+#
+#     def add_elect(self,product):
+#         self.electronics_products.append(product)
+#
+#
+#     def delete_elect(self,title):
+#         for p in self.electronics_products:
+#             if p.title == title:
+#                 self.electronics_products.remove(p)
+#                 print(f'{title} ochdi')
+#         print("topilmadi")
+#
+#     def edit_elect(self,title,n_price=None,n_year=None):
+#         for p in self.electronics_products:
+#             if p.title == title:
+#                 if n_price:
+#                     p.price = n_price
+#                 if n_year:
+#                     p.year = n_year
+#                     print(f'{title} yangilandi')
+#                     return
+#         print("topilmadi")
+#
+#     def show_elect(self,product):
+#         for p in self.electronics_products:
+#             p.info()
