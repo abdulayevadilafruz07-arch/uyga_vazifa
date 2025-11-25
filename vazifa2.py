@@ -1,157 +1,167 @@
-'''onlayn magazin'''
-# shop manager loyihasi
-# class Product:
-#     def __init__(self,title,price,year):
-#         self.title = title
-#         self.price = price
-#         self.year = year
-#         self.type=''
-#
-#
-# class Shop:
-#     def __init__(self,title,phone):
-#         self.title = title
-#         self.phone = phone
-#         self.baza=[]
-#
-#     def add_water(self):
-#         title =input("title")
-#         price = input("price")
-#         year = input("year")
-#         p1 = Product(title,price,year)
-#         p1.type='water'
-#         self.baza.append(p1)
-#
-#
-#     def add_food(self):
-#         title =input("title")
-#         price = int(input("price"))
-#         year = int(input("year"))
-#         p1 = Product(title,price,year)
-#         p1.type='food'
-#         self.baza.append(p1)
-#
-#
-#     def view_all(self):
-#         for item in self.baza:
-#             if item.type == 'water':
-#                 print(f"title: {item.title}, price: {item.price}, year: {item.year}")
-#             else:
-#                 print(f"title: {item.title}, price: {item.price}, year: {item.year}")
-#
-#             print(f"title: {item.title}, price: {item.price}, type: {item.type}")
-#
-#
-#     def update_water(self):
-#         if self.type == 'water':
-#             n_title = input("title")
-#             n_price = int(input("price"))
-#             n_year = int(input("year"))
-#             p1= Product(n_title,n_price,n_year)
-#             p1.type='water'
 
-
-    # def update_food(self):
-    #     shop1.view_all()
-# shop1=Shop("shop1","123445666")
-# shop1.update_water()
-#
-# def shop_manager(shop:Shop):
-#     while True:
-#         kod=input("1. add water\n2. add food\n3. view all\n4. update water\n5. exit")
-#         if kod=='1':
-#             shop.add_water()
-#         elif kod=='2':
-#             shop.add_food()
-#         elif kod=='3':
-#             shop1.view_all()
-#         elif kod=='4':
-#             shop1.view_all()
-#             shop1.update_water()
-#         else:
-#             break
-# shop_manager(shop1)
-#
-# '''uyga vazifa'''
-# class Product():
-#     def __init__(self,title,price,year):
-#         self.title = title
-#         self.price = price
-#         self.year = year
-#
-#     def info(self):
-#         print(f"title:{self.title},price:{self.price},year:{self.year}")
-#
-# class electronics(Product):
-#     pass
-# s1=Product('tv','100','2025')
-# s1.info()
-#
-# class food(Product):
-#     pass
-# s2=Product('water','10','2025')
-# s2.info()
-#
-# class book(Product):
-#     pass
-# s3=Product('book1','10','2025')
-# s3.info()
-#
-# class elect(Product):
-#     def __init__(self,title,price,year,size,cpu):
-#         super().__init__(title,price,year)
-#         self.size = size
-#         self.cpu = cpu
-# s1=elect('tv','100','2025','42','16')
-# s1.info()
-#
-# class food1(Product):
-#     def __init__(self,title,price,year,sizew,waterw)
-#         super().__init__(title,price,year)
-#         self.sizew = sizew
-#         self.waterw = waterw
-# s2=food1('water','10','2025','1','w')
-# s2.info()
-#
-# class book2(Product):
-#     def __init__(self,title,price,year,sizeb,colour):
-#         super.__init__(title,price,year)
-#         self.sizeb = sizeb
-#         self.colour = colour
-# s3=book2('book1','30','2025','2','green')
-# s3.info()
-#
-# class Shop():
-#     def __init__(self,name,baza):
+# class Person:
+#     def __init__(self, name, phone,age):
 #         self.name = name
-#         self.baza = baza
-#         self.electronics_products = []
-#         self.food_products = []
-#         self.book_products = []
+#         self.phone = phone
+#         self.age = age
+#
+#     def show(self):
+#         print(f"name: {self.name}, phone: {self.phone}")
 #
 #
-#     def add_elect(self,product):
-#         self.electronics_products.append(product)
+# class Student(Person):
+#     def __init__(self, name, phone, age, student,group_id):
+#         super().__init__(name,phone,age)
+#         self.student_id = student
+#         self.group_id = group_id
 #
 #
-#     def delete_elect(self,title):
-#         for p in self.electronics_products:
-#             if p.title == title:
-#                 self.electronics_products.remove(p)
-#                 print(f'{title} ochdi')
-#         print("topilmadi")
+#     def show(self):
+#         print(f"name: {self.name}, student_id: {self.student_id}, group_id: {self.group_id}")
 #
-#     def edit_elect(self,title,n_price=None,n_year=None):
-#         for p in self.electronics_products:
-#             if p.title == title:
-#                 if n_price:
-#                     p.price = n_price
-#                 if n_year:
-#                     p.year = n_year
-#                     print(f'{title} yangilandi')
-#                     return
-#         print("topilmadi")
+# p1=Person('ali','12345667',12)
+# s1=Student('vali','56677888',11,766788,45)
+# p1.show()
+# s1.show()
 #
-#     def show_elect(self,product):
-#         for p in self.electronics_products:
-#             p.info()
+
+
+
+
+
+
+class Student:
+    def __init__(self, name,phone,age,email):
+        self.name = name
+        self.phone = phone
+        self.age = age
+        self.email = email
+
+    def view_student(self):
+        print(f'{self.name} {self.phone} {self.age} {self.email}')
+
+
+class Students(Student):
+    def __init__(self,name,phone,age,email,group_id):
+        super().__init__(name,phone,age,email)
+        self.group_id = group_id
+
+    def view_student(self):
+        print(f'{self.name} {self.phone} {self.age} {self.email} {self.group_id}')
+
+class Group:
+    def __init__(self,title,profession):
+        self.title = title
+        self.profession = profession
+        self.students = []
+
+    def add_student(self):
+        name=input("name:")
+        phone=input("phone:")
+        age=input("age:")
+        email=input("email:")
+        student = Student(name,phone,age,email)
+        self.students.append(student)
+    def view_students(self):
+        count=0
+        for item in self.students:
+            count+=1
+            print(f"{count}. name:{item.name} age:{item.age}")
+
+class OTM:
+    def __init__(self,title):
+        self.title=title
+        self.groups=[]
+
+    def add_group(self):
+        title=input("title:")
+        profession=input("profession:")
+        group=Group(title,profession)
+        self.groups.append(group)
+
+    def view_groups(self):
+        count=0
+        for item in self.groups:
+            count+=1
+            print(f"{count}. title:{item.title} profession:{item.profession}")
+
+class ERP:
+    def __init__(self):
+        self.title='ERP'
+        self.otms=[]
+
+    def add_otm(self):
+        title=input("title:")
+        otm=OTM(title)
+        self.otms.append(otm)
+
+    def view_otms(self):
+        count=0
+        for item in self.otms:
+            count+=1
+            print(f"{count}. title:{item.title}")
+
+erp=ERP()
+
+def students_manager(students:Students):
+    while True:
+        kod=input("1.view student\n2.exit")
+        if kod=='1':
+            students.view_student
+        else:
+            break
+
+
+def group_manager(group:Group):
+    while True:
+        kod=input("1. add student\n2. view students\n3. break")
+        if kod=="1":
+            print('============')
+            group.add_student()
+            print('---------------')
+        elif kod=="2":
+            print('============')
+            group.view_students()
+            print('---------------')
+        else:
+            break
+
+def otm_manager(otm:OTM):
+    while True:
+        kod=input("1. add group\n2. view groups\n3. break")
+        if kod=="1":
+            print('============')
+            otm.add_group()
+            print('---------------')
+        elif kod=="2":
+            print('============')
+            otm.view_groups()
+            print('---------------')
+        else:
+            break
+
+def erp_manager(ep:ERP):
+    while True:
+        kod=input("1. add otm\n2. view otms\n3.OTM detail \n 4. break")
+        if kod=="1":
+            print('============')
+            ep.add_otm()
+            print('---------------')
+        elif kod=="2":
+            print('============')
+            ep.view_otms()
+            print('---------------')
+        elif kod=="3":
+            print('============')
+            ep.view_otms()
+            print('---------------')
+            index=int(input("otm_id :"))
+            otm=ep.otms[index-1]
+            otm_manager(otm)
+
+        else:
+            break
+
+erp_manager(erp)
+
+
