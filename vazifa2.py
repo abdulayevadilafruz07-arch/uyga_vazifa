@@ -1,30 +1,5 @@
 
-# class Person:
-#     def __init__(self, name, phone,age):
-#         self.name = name
-#         self.phone = phone
-#         self.age = age
-#
-#     def show(self):
-#         print(f"name: {self.name}, phone: {self.phone}")
-#
-#
-# class Student(Person):
-#     def __init__(self, name, phone, age, student,group_id):
-#         super().__init__(name,phone,age)
-#         self.student_id = student
-#         self.group_id = group_id
-#
-#
-#     def show(self):
-#         print(f"name: {self.name}, student_id: {self.student_id}, group_id: {self.group_id}")
-#
-# p1=Person('ali','12345667',12)
-# s1=Student('vali','56677888',11,766788,45)
-# p1.show()
-# s1.show()
-#
-#
+
 #
 #
 #
